@@ -1,3 +1,5 @@
 Cloned the repo and created this file for random ideas and notes regarding the assignment. 
 Had some issues with moving it from CodeSandbox, but was able to successfuly port it over.
 Performing a text to see if the repo successfully updates to GitHub using 'git push origin main'
+
+Successfully completed updates to GitHub. Files are now in sync for next updates.

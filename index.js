@@ -13,7 +13,7 @@ const getFavouritesBtn = document.getElementById("getFavouritesBtn");
 // Step 0: Store your API key here for reference and easy access.
 const API_KEY =
   "live_gjOyMBpku8CEOSYU3TGH8ZIwxkc0wBuRu8fg2PuHLy9ArBumkfIpWTMSrfeOT5V2";
-
+const URL = "https://api.thecatapi.com/v1/";
 /**
  * 1. Create an async function "initialLoad" that does the following:
  * - Retrieve a list of breeds from the cat API using fetch().
@@ -22,7 +22,20 @@ const API_KEY =
  *  - Each option should display text equal to the name of the breed.
  * This function should execute immediately.
  */
-async function initialLoad() {}
+async function initialLoad() {
+  try {
+    const res = await fetch(URL + "breeds", {
+      "x-api-key": API_KEY,
+    });
+
+    const breeds = await res.json();
+
+    const breedSelect = document.querySelector("#breedSelect");
+  } catch (error) {
+    console.error("Error loading breeds:", error);
+  }
+}
+initialLoad();
 /**
  * 2. Create an event handler for breedSelect that does the following:
  * - Retrieve information on the selected breed from the cat API using fetch().
